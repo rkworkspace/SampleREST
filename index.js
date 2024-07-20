@@ -5,8 +5,12 @@ const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
 
-router.get("/sample_get", (req, res) => {
+router.get("/", (req, res) => {
     res.send("App is running..");
+});
+
+router.post("/", (req, res) => {
+  res.send("post called");
 });
 
 app.use("/.netlify/functions/app", router);
